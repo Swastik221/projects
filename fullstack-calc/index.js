@@ -3,6 +3,10 @@ const express=require("express");
 
 const app= express();
 
+app.get("/",(req,res)=>{
+  res.sendFile("/Users/swastiktiwari/projects/fullstack-calc/index.html");
+
+})
 
 
 
@@ -14,4 +18,4 @@ app.get("/sum/:a/:b",(req,res)=>{
 
 })
 
-app.listen(3000);
+app.listen(3002);
