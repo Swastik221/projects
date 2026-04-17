@@ -8,14 +8,25 @@ app.get("/",(req,res)=>{
 
 })
 
-
-
-app.get("/sum/:a/:b",(req,res)=>{
-  const a= Number(req.params.a);
-  const b= Number(req.params.b);
+// for input of body
+app.post("/sum",(req,res)=>{
+  const a= Number(req.body.a);
+  const b= Number(req.body.b);
   const sum=a+b;
-  res.json({ans:sum})
-
+  res.json({
+    ans:sum
+  });
 })
+
+
+
+// for path parameter input tech
+// app.get("/sum/:a/:b",(req,res)=>{
+//   const a= Number(req.params.a);
+//   const b= Number(req.params.b);
+//   const sum=a+b;
+//   res.json({ans:sum})
+
+// })
 
 app.listen(3002);
