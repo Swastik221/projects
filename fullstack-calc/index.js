@@ -3,6 +3,10 @@ const express=require("express");
 
 const app= express();
 
+app.use(express.json());
+
+
+
 app.get("/",(req,res)=>{
   res.sendFile("/Users/swastiktiwari/projects/fullstack-calc/index.html");
 
@@ -21,6 +25,7 @@ app.post("/sum",(req,res)=>{
 
 
 // for path parameter input tech
+
 // app.get("/sum/:a/:b",(req,res)=>{
 //   const a= Number(req.params.a);
 //   const b= Number(req.params.b);

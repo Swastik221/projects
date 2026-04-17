@@ -8,7 +8,16 @@
       // const sum= a+b;
       // document.getElementById("parent").innerHTML=sum;
 
-      const res = await fetch("http://localhost:3002/sum/"+a+"/"+b);
+      const res = await fetch("http://localhost:3002/sum/",{
+        method:"POST",
+        headers:{
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify({
+          a:a,
+          b:b
+        })
+      });
       const json=await res.json();
 
       document.getElementById("parent").innerHTML=json.ans;
