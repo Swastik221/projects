@@ -1,7 +1,26 @@
+<head>
+  <script>
+    async function add(){
+      const a= (document.getElementById("A").value);
+      const b=(document.getElementById("B").value);
+
+
+      // const sum= a+b;
+      // document.getElementById("parent").innerHTML=sum;
+
+      const res = await fetch("http://localhost:3002/sum/"+a+"/"+b);
+      const json=await res.json();
+
+      document.getElementById("parent").innerHTML=json.ans;
+    }
+  </script>
+</head>
+
+
 <body>
-  <input type="number" placeholder="enter first number">
-  <input type="number" placeholder="enter first number">
-  <button>add</button>
+  <input type="number" placeholder="enter first number" id="A">
+  <input type="number" placeholder="enter first number" id="B">
+  <button onclick="add()">add</button>
   <button>sub</button>
   <button>mul</button>
   <button>div</button>
